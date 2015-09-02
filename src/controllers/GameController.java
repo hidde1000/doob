@@ -3,7 +3,6 @@ package controllers;
 import java.util.ArrayList;
 
 import Application.Ball;
-import Application.Main;
 import javafx.animation.AnimationTimer;
 import javafx.fxml.FXML;
 import javafx.scene.canvas.Canvas;
@@ -17,11 +16,13 @@ public class GameController {
 	
 	private ArrayList<Ball> balls;
 	private int ballSpeed = 3;
+	private int startHeight = 200;
+	private int ballSize = 100;
 
 	@FXML
 	public void initialize() {
 		balls = new ArrayList<Ball>();
-		balls.add(new Ball(100, 500, ballSpeed, 0, 100));
+		balls.add(new Ball(0, startHeight, ballSpeed, 0, ballSize));
 		gc = canvas.getGraphicsContext2D();
 		startTimer();
 	}
