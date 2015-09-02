@@ -4,7 +4,6 @@ import java.awt.event.KeyListener;
 import java.util.ArrayList;
 
 import Application.Ball;
-import Application.Main;
 import javafx.animation.AnimationTimer;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -14,8 +13,19 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.control.Label;
+import javafx.scene.layout.Pane;
 
 public class GameController{
+	
+	@FXML
+	private Pane lives1;
+	@FXML
+	private Pane lives2;
+	@FXML
+	private Label score1;
+	@FXML
+	private Label score2;
 	
 	@FXML
 	private Canvas canvas;
@@ -25,6 +35,8 @@ public class GameController{
 	
 	private ArrayList<Ball> balls;
 	private int ballSpeed = 3;
+	private int startHeight = 200;
+	private int ballSize = 100;
 
 	@FXML
 	public void initialize() {
@@ -52,7 +64,7 @@ public class GameController{
 		});
 		canvas.requestFocus();
 		balls = new ArrayList<Ball>();
-		balls.add(new Ball(100, 500, ballSpeed, 0, 100));
+		balls.add(new Ball(0, startHeight, ballSpeed, 0, ballSize));
 		gc = canvas.getGraphicsContext2D();
 		startTimer();
 	}
