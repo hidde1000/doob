@@ -7,8 +7,19 @@ import javafx.animation.AnimationTimer;
 import javafx.fxml.FXML;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.control.Label;
+import javafx.scene.layout.Pane;
 
 public class GameController {
+	
+	@FXML
+	private Pane lives1;
+	@FXML
+	private Pane lives2;
+	@FXML
+	private Label score1;
+	@FXML
+	private Label score2;
 	
 	@FXML
 	private Canvas canvas;
