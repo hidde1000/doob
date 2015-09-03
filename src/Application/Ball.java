@@ -1,5 +1,4 @@
 package Application;
-import java.awt.Rectangle;
 
 
 public class Ball {
