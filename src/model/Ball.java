@@ -1,4 +1,4 @@
-package Application;
+package model;
 
 
 public class Ball {

@@ -7,7 +7,7 @@ import javafx.fxml.FXML;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
-import Application.Ball;
+import model.Ball;
 import Application.Board;
 
 public class GameController{
