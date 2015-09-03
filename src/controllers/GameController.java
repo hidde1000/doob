@@ -49,6 +49,7 @@ public class GameController{
 	            public void handle(long now) {
 	               board.moveBalls();
 	               board.movePlayer();
+	               board.shoot();
 	               board.paint();
 	            }
 	        }.start();
