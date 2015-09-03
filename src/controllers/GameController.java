@@ -9,6 +9,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 import model.Ball;
 import Application.Board;
+import Application.Player;
 
 public class GameController{
 	
@@ -26,15 +27,19 @@ public class GameController{
 	private Board board;
 	
 	private ArrayList<Ball> balls;
+	private Player player;
 	private int ballSpeed = 3;
 	private int startHeight = 200;
 	private int ballSize = 100;
+	private int playerHeight = 80;
+	private int playerWidth = 40;
 
 	@FXML
 	public void initialize() {
 		balls = new ArrayList<Ball>();
 		balls.add(new Ball(0, startHeight, ballSpeed, 0, ballSize));
-		board = new Board(canvas, balls);
+		player = new Player(canvas.getWidth() / 2, canvas.getHeight() - playerHeight, playerWidth, playerHeight, 0);
+		board = new Board(canvas, balls, player);
 		startTimer();
 	}
 
@@ -43,6 +48,7 @@ public class GameController{
 	            @Override
 	            public void handle(long now) {
 	               board.moveBalls();
+	               board.movePlayer();
 	               board.paint();
 	            }
 	        }.start();
